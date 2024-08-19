@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './loginform.css'
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link, Navigate } from 'react-router-dom';
 
@@ -23,15 +22,16 @@ const handleOnSubmit = async (event)=>{
       const a = await axios.post('http://localhost:3000/auth/signup', formData)
       console.log (a)
     if(a.data.status==201){setStatus(a.data.status)}
-    else {setConfirm(JSON.stringify(a.data.payload.message))}
+    else {setConfirm(a.data.payload.message.replace("\"", ''))}
     } catch (error) {
       console.log(error.data.error)
     }
 }
 
   return (
-    <div className='container'>
+    <div className='container'>      
       <form onSubmit={(event)=>handleOnSubmit(event)} onChange={(event)=>handleOnChange(event)} className="form" action="">
+      {status==201 ?<Navigate to={'/login'}/>:<h1>{confirm}</h1>}
         <div className="name">
         <label htmlFor="n-lbl">name</label>
         <input placeholder='name' type="name" id='name'/>
@@ -51,13 +51,9 @@ const handleOnSubmit = async (event)=>{
         <Link to={'/login'}>Already have an account, login?</Link>
 
     </form>
-    {status==201 ?<Navigate to={'/login'}/>:<p>{confirm}</p>}
+    
     </div>
   )
 }
-
-SignUpForm.propTypes = {
-  fun :PropTypes.func
-};
 
 export default SignUpForm

@@ -28,6 +28,7 @@
 }
 .nav .nav-button-box .nav-button {
     background-color: rgb(195, 0, 255);
+    width: 5rem;
     color: rgb(255, 255, 255);
     padding: .5rem;
     border-radius: 1rem;
