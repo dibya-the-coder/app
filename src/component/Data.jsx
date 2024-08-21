@@ -1,5 +1,5 @@
 import DataCard from "./DataCard";
-import "./datas.css";
+import "./css/datas.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -9,11 +9,12 @@ const Data = () => {
   useEffect(() => {
     const getDatas = async () => {
       try {
-        const data = await axios.get("http://localhost:3000/user/all", {
+        const data = await axios.get("http://localhost:3000/posts", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
         });
+        console.log(data.data.payload);
         setUser(data.data.payload);
       } catch (error) {
         setMessage(error.response.statusText);
@@ -26,7 +27,7 @@ const Data = () => {
     <div className="user-datas">
       {message && <h1>{message}</h1>}
       {user == []
-        ? "no data"
+        ? console.log('no data')
         : user.map((item) => <DataCard key={item._id} data={item} />)}
     </div>
   );

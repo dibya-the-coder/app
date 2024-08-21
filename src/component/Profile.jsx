@@ -1,7 +1,7 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import "./datas.css";
+import "./css/datas.css";
 
 const Profile = () => {
   const [user, setUser] = useState();

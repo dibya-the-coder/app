@@ -1,0 +1,26 @@
+.all-blogs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem auto;
+    width: 50rem;
+    /*overflow: scroll;*/
+}
+.all-blogs h1 {
+    text-align: center;
+}
+.all-blogs .blog-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem;
+    GAP: 1rem;
+    background-color: #d1d1d1;
+}
+.all-blogs .blog-item span{
+    font-size: 2rem;
+}
+.all-blogs .blog-item div{
+    font-size: 1.2rem;
+    line-height: 2rem;
+}

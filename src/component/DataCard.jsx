@@ -1,11 +1,11 @@
-import './datas.css'
+import './css/datas.css'
 import PropTypes from 'prop-types'
 
 const DataCard = ({data}) => {
   return (
     <div className="data-items">
-        <div>{data.name}</div>
-        <div>{data.email}</div>
+        <div>{data.title}</div>
+        <div>{data.content}</div>
     </div>
   )
 }

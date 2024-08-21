@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 .nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
     padding: 1rem;
     font-size: 1.2rem;
     display: flex;
@@ -28,7 +31,7 @@
 }
 .nav .nav-button-box .nav-button {
     background-color: rgb(195, 0, 255);
-    width: 5rem;
+    width: 7rem;
     color: rgb(255, 255, 255);
     padding: .5rem;
     border-radius: 1rem;

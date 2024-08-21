@@ -1,0 +1,14 @@
+.msg {
+    text-align: center;
+    color: #ffffff;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: lighter;
+}
+.success {
+    background-color: green;
+}
+.failure {
+    background-color: #cb0404;
+}
